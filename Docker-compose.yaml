@@ -1,0 +1,17 @@
+
+services:
+  app:
+    image: vpcapp:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/build/data
+    networks:
+      - app-network
+
+networks:
+  app-network:
+
